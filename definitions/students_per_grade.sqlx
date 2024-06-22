@@ -1,0 +1,15 @@
+config {
+  type: "table",
+  schema: "dataform"
+}
+
+create or replace table dataform.students_per_grade as (
+select 
+    grade,
+    count(grade) as no_of_students
+
+from dataform.students
+
+group by grade
+order by grade
+)

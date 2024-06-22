@@ -1,0 +1,10 @@
+config {
+  type: "assertion",
+  schema: "dataform"
+}
+
+select *
+from dataform.students
+
+where id < 6
+order by id
