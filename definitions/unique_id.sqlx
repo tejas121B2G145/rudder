@@ -1,0 +1,9 @@
+config {
+  type: "view",
+  assertions: {
+    uniqueKey: ["id"]
+  }
+}
+
+select id
+from dataform.students
