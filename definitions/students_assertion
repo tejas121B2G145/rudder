@@ -1,0 +1,15 @@
+config {
+  type: "assertion",
+  schema: "dataform",
+  name: "students_assertion"
+}
+
+assertion_name("unique_id") as (
+  select id,
+    count(*) as cnt
+
+  from engaged-oarlock-425609.dataform.students
+
+  group by id
+  having cnt > 1 
+);
