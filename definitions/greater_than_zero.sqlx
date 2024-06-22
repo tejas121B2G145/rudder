@@ -1,0 +1,13 @@
+config {
+  type: "assertion",
+  schema: "dataform"
+}
+
+select id
+from dataform.students
+
+group by id
+
+having count(*) = 1
+
+and id > 0
