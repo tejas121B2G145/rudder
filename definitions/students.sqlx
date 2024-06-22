@@ -1,0 +1,19 @@
+config {
+  type: "table",
+  schema: "dataform",
+  name: "students"
+}
+
+create or replace table dataform.students as
+select * from unnest([
+  STRUCT(1 AS id, 'John' AS first_name, 'Doe' AS last_name, 85 AS mark, 'A' AS grade),
+  STRUCT(2 AS id, 'Jane' AS first_name, 'Doe' AS last_name, 75 AS mark, 'B' AS grade),
+  STRUCT(3 AS id, 'Jim' AS first_name, 'Beam' AS last_name, 65 AS mark, 'C' AS grade),
+  STRUCT(4 AS id, 'Jack' AS first_name, 'Daniels' AS last_name, 55 AS mark, 'D' AS grade),
+  STRUCT(5 AS id, 'Johnny' AS first_name, 'Walker' AS last_name, 45 AS mark, 'E' AS grade),
+  STRUCT(6 AS id, 'Jill' AS first_name, 'Valentine' AS last_name, 95 AS mark, 'A' AS grade),
+  STRUCT(7 AS id, 'Chris' AS first_name, 'Redfield' AS last_name, 85 AS mark, 'B' AS grade),
+  STRUCT(8 AS id, 'Claire' AS first_name, 'Redfield' AS last_name, 75 AS mark, 'C' AS grade),
+  STRUCT(9 AS id, 'Leon' AS first_name, 'Kennedy' AS last_name, 65 AS mark, 'D' AS grade),
+  STRUCT(10 AS id, 'Ada' AS first_name, 'Wong' AS last_name, 55 AS mark, 'E' AS grade)
+])
